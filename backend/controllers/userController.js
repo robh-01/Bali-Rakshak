@@ -1,4 +1,5 @@
-import { createUser } from "../db/userQueries.js";
+import { createUser, getUserByPhone } from "../db/userQueries.js";
+import jwt from "jsonwebtoken";
 
 async function signUpPost(req, res) {
   let { name, phone, password, isExpert } = req.body;
@@ -24,7 +25,7 @@ async function loginPost(req, res, next) {
       });
     }
 
-    const isMatch = (user.password === password);
+    const isMatch = user.password === password;
     if (!isMatch) {
       return res.status(401).json({
         status: "failure",

@@ -26,4 +26,4 @@ async function getUserByPhone(phone) {
   return user;
 }
 
-export { createUser, getUserById };
+export { createUser, getUserById, getUserByPhone };
