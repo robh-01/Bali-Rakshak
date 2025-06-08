@@ -9,9 +9,9 @@ function Navbar() {
       </div>
       <div className="link">
         <ul>
-            <li><a href="/diagnose">Diagnose</a></li>
-            <li><a href="/ask">Ask AI</a></li>
-            <li><a href="/">Community</a></li>
+            <li><a href="/">Diagnose</a></li>
+            <li><a href="/app/ask">Ask AI</a></li>
+            <li><a href="/app/community">Community</a></li>
         </ul>
       </div>
       <div className="logout">

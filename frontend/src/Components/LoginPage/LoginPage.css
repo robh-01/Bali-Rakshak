@@ -1,0 +1,66 @@
+.login-container {
+  max-width: 370px;
+  margin: 70px auto;
+  height: 400px;
+  padding: 20px;
+  text-align: left;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f5f8f3;
+  font-size: 14px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #54d11f;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.signup-link {
+  margin-top: 14px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #000;
+  text-decoration: underline;
+}
+.top-logo{
+    font-size: 30px;
+    font-weight: 700;
+    padding: 10px 80px;
+    
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+}
+.top-logo span{
+    color: #66cc4a;
+    font-weight: 700;

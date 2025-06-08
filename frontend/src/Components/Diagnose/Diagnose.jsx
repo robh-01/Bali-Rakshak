@@ -86,7 +86,7 @@ function Home() {
           <h1>Crop Disease Diagnosis</h1>
           <p>
             Upload a photo of your crop to receive an AI-powered diagnosis and
-            potential solutions.
+            potential solutions. 
           </p>
 
           <div className={`upload-box ${image ? "no-border" : ""}`}>
