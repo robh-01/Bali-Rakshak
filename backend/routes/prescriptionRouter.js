@@ -3,6 +3,6 @@ const prescriptionRouter = Router();
 
 import { prescriptionGet } from "../controllers/prescriptionController.js";
 
-prescriptionRouter.get("", prescriptionGet);
+prescriptionRouter.post("", prescriptionGet);
 
 export { prescriptionRouter };

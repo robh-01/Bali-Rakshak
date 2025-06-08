@@ -47,6 +47,7 @@ Write a helpful, clear, and natural response to a Nepali farmer, using the follo
     - Chemical solutions: Suggest safe and effective treatments, including the names of products or compounds where possible. Include warnings or usage instructions if needed.
 
 Additional Guidelines:
+- Limit the response to about 300 words.
 - If there is no disease name above, that means the crop is healthy so don't regard the above structure and make a short about 30 words response about whatever you think is appropriate.
 - Start response with phrases like "Looking from the photo..", "Looks like.."
 - Give Response in English only.
