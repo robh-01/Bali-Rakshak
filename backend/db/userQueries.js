@@ -19,4 +19,11 @@ async function getUserById(id) {
   return user;
 }
 
+async function getUserByPhone(phone) {
+  const user = await prisma.user.findUnique({
+    where: { phone },
+  });
+  return user;
+}
+
 export { createUser, getUserById };

@@ -16,7 +16,7 @@ datasource db {
 
 model User {
   id       Int       @id @default(autoincrement())
-  email    String    @unique
+  phone    String    @unique
   password String
   isExpert Boolean   @default(false)
   name     String
