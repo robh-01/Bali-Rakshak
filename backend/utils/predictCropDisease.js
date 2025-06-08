@@ -3,11 +3,11 @@ import * as tf from "@tensorflow/tfjs-node";
 
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-const data = require("../model/metadata.json");
+const data = require("../models/metadata.json");
 
 async function loadModel() {
   const model = await tf.loadLayersModel(
-    `file://${path.join(import.meta.dirname, "../model/model.json")}`
+    `file://${path.join(import.meta.dirname, "../models/model.json")}`
   );
   //   console.log("Model loaded");
   return model;

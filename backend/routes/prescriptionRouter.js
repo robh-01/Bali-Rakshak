@@ -5,4 +5,4 @@ import { prescriptionGet } from "../controllers/prescriptionController.js";
 
 prescriptionRouter.get("", prescriptionGet);
 
-export { prescriptionGet };
+export { prescriptionRouter };
