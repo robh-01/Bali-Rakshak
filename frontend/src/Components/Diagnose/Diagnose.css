@@ -1,0 +1,57 @@
+.container{
+    width: 100%;
+    min-height: 85vh;
+    
+}
+.box{
+    height: 85vh;
+    padding: 30px 80px;
+    display: flex;
+    justify-content: center;
+    width:auto;
+}
+.inside{
+    width: 100%;
+} 
+
+.inside h1{
+    padding: 10px 0px;
+    font-size: 34px;
+    font-weight: 650;
+}
+.inside p{
+    color: rgba(0, 0, 0, 0.863);
+    padding: 10px 0;
+    font-size: 16px;
+}
+/* inout box */
+.upload-box{
+    width: 100%;
+    height: 300px;
+    border: 1px dashed rgba(0, 0, 0, 0.671);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+button{
+    cursor: pointer;
+}
+
+.diagnosis-btn{
+    padding: 11px 17px;
+    border-radius: 20px;
+    border: none;
+    background: #81e665;
+    margin:20px 0;
+}
+.items{
+    width: 37%;
+}
+.items h1{
+    font-size: 25px;
+}
+.items p{
+    font-size: 12px;
+}
