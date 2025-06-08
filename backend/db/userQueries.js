@@ -9,4 +9,14 @@ async function createUser(user) {
   return createdUser;
 }
 
-export { createUser };
+async function getUserById(id) {
+  const user = await prisma.user.findUnique({
+    where: { id },
+    omit: {
+      password: true,
+    },
+  });
+  return user;
+}
+
+export { createUser, getUserById };
