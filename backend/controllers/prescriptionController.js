@@ -12,7 +12,7 @@ export const prescriptionGet = [
     const imageBuffer = req.file?.buffer;
     const mimeType = req.file?.mimeType;
 
-    const prescription = await prescriptCropDisease(imageBuffer);
-    res.send(prescription);
+    const prediction = await predictCropDisease(imageBuffer);
+    res.send(prediction);
   },
 ];
