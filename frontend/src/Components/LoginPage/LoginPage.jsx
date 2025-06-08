@@ -9,7 +9,7 @@ function LoginPage() {
         Bali<span>Rakshak.</span>
       </div>
       <div className="login-container">
-        <h2>Log in</h2>
+        <h2>Log In</h2>
 
         <form action="">
           <div className="form-group">

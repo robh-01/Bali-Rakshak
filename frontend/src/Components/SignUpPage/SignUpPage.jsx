@@ -24,7 +24,7 @@ function SignUp() {
       </div>
 
       <div className="signup-container">
-        <h2>Sign up</h2>
+        <h2>Sign Up</h2>
 
         <form>
           <div className="form-group">

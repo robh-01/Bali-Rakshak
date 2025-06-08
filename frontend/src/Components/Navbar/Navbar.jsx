@@ -3,7 +3,7 @@ import "./Navbar.css"
 
 function Navbar() {
   return (
-    <div className='navbar'>
+    <div className='navbar'> 
       <div className="logo">
         Bali<span>Rakshak.</span>
       </div>
@@ -15,7 +15,7 @@ function Navbar() {
         </ul>
       </div>
       <div className="logout">
-        <a href="">Logout</a>
+        <a href="/home">Logout</a>
       </div>
       
     </div>

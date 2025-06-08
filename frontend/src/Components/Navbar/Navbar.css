@@ -7,7 +7,7 @@
     padding: 0;
 }
 .navbar{
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     padding: 17px 80px;
     text-align: center;
