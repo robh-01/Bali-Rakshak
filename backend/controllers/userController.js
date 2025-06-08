@@ -13,6 +13,8 @@ async function signUpPost(req, res) {
   }
 }
 
-async function loginPost(req, res) {}
+async function loginPost(req, res) {
+  
+}
 
 export { signUpPost, loginPost };
