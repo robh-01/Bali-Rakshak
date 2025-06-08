@@ -18,6 +18,10 @@
     font-size: 30px;
     font-weight: 700;
 }
+.logo a{
+    text-decoration: none;
+    color: black;
+}
 .logo span{
     color: #66cc4a;
     font-weight: 700;

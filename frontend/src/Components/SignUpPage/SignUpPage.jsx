@@ -20,7 +20,7 @@ function SignUp() {
   return (
     <>
       <div className="top-logo">
-        Bali<span>Rakshak.</span>
+        <a href="/home">Bali<span>Rakshak.</span></a>
       </div>
 
       <div className="signup-container">

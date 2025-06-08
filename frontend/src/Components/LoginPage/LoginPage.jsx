@@ -6,7 +6,7 @@ function LoginPage() {
   return (
     <>
       <div className="top-logo">
-        Bali<span>Rakshak.</span>
+        <a href="/home">Bali<span>Rakshak.</span></a>
       </div>
       <div className="login-container">
         <h2>Log In</h2>
