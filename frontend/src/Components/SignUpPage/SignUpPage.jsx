@@ -1,11 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./SignUpPage.css";
 import { Link } from "react-router-dom";
 
 function SignUp() {
-   const [isChecked, setIsChecked] = useState(false);
-   const [image, setImage] = useState(null);
-   const imageIn = (e) => {
+  const [isChecked, setIsChecked] = useState(false);
+  const [image, setImage] = useState(null);
+
+  const imageIn = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
@@ -21,9 +22,11 @@ function SignUp() {
       <div className="top-logo">
         Bali<span>Rakshak.</span>
       </div>
+
       <div className="signup-container">
-        <h2>Sign up</h2> 
-        <form action="">
+        <h2>Sign up</h2>
+
+        <form>
           <div className="form-group">
             <label>Full Name</label>
             <input type="text" placeholder="Enter your name" name="name" />
@@ -39,44 +42,41 @@ function SignUp() {
             <input type="password" placeholder="Enter your password" name="password" />
           </div>
 
+          {/* Expert checkbox */}
+          <label className="expert-checkbox">
+            <input
+              type="checkbox"
+              checked={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+            />
+            &nbsp;Are you an Expert Agriculture Officer?
+          </label>
 
-
-
-        {/* For Expert */}
-        <label className="expert-checkbox">
-        <input
-          type="checkbox"
-          checked={isChecked}
-          onChange={(e) => setIsChecked(e.target.checked)}
-        />
-        &nbsp;Are you an Expert Agriculture Officer?
-      </label>
-
-      {isChecked && (
+          {/* Upload Box with Preview */}
+          {isChecked && (
             <div className="popup-box">
-              <div className="document-upload">
-              <h4>Upload Verification Document</h4>
-              <p>Please upload a photo of your official document for verification.</p>
-              <label className="document-upload-btn">
-                  Upload
-                  <input
-                    type="file"
-                    accept="image/jpg, image/png"
-                    // onChange={imageIn}
-                    hidden
-                  />
-                </label>
-              </div>
+              {image ? (
+                <img src={image} alt="Uploaded" className="preview-image" />
+              ) : (
+                <div className="document-upload">
+                  <h4>Upload Verification Document</h4>
+                  <p>Please upload a photo of your official document for verification.</p>
+                  <label className="document-upload-btn">
+                    Upload
+                    <input
+                      type="file"
+                      accept="image/jpg, image/png"
+                      onChange={imageIn}
+                      hidden
+                    />
+                  </label>
+                </div>
+              )}
             </div>
           )}
-
-
-
-
-
         </form>
 
-        <button className="signup-btn">Sign up</button>
+        <button className="signup-btn" disabled={!image} >Sign up</button>
 
         <p className="login-link">
           Already have an account? <Link to="/login">Log in</Link>

@@ -7,7 +7,7 @@ function Home() {
   const [image, setImage] = useState(null);
   const [diagnosisLoading, setDiagnosisLoading] = useState(false);
   const [diagnosis, setDiagnosis] = useState("");
-  const [nepaliDiagnosis, setNepaliDiagnosis] = useState("");
+  const [nepaliDiagnosis, setNepaliDiagnosis] = useState(""); 
 
   const imageIn = (e) => {
     const file = e.target.files[0];
@@ -89,6 +89,7 @@ function Home() {
             potential solutions. 
           </p>
 
+
           <div className={`upload-box ${image ? "no-border" : ""}`}>
             {image ? (
               <img src={image} alt="Uploaded" className="uploaded-img" />
@@ -111,6 +112,8 @@ function Home() {
               </div>
             )}
           </div>
+
+
           <button
             className="diagnosis-btn"
             disabled={!image || diagnosisLoading}
