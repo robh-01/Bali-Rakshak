@@ -6,6 +6,10 @@ function LoginPage() {
   return (
     <>
       <div className="top-logo">
+        <img
+              src="../src/assets/img/logo/logo-full-transparent.png"
+              alt="Cost-Effective"
+            />
         <a href="/home">Bali<span>Rakshak.</span></a>
       </div>
       <div className="login-container">
@@ -17,7 +21,7 @@ function LoginPage() {
             <input
               type="text"
               placeholder="Enter your phone number"
-              name="phone-number"
+              name="phone"
             />
           </div>
 

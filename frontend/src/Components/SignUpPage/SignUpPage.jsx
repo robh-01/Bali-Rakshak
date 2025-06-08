@@ -20,6 +20,10 @@ function SignUp() {
   return (
     <>
       <div className="top-logo">
+        <img
+              src="../src/assets/img/logo/logo-full-transparent.png"
+              alt="Cost-Effective"
+            />
         <a href="/home">Bali<span>Rakshak.</span></a>
       </div>
 
@@ -34,7 +38,7 @@ function SignUp() {
 
           <div className="form-group">
             <label>Phone Number</label>
-            <input type="text" placeholder="Enter your phone number" name="phone-number" />
+            <input type="text" placeholder="Enter your phone number" name="phone" />
           </div>
 
           <div className="form-group">
@@ -76,7 +80,7 @@ function SignUp() {
           )}
         </form>
 
-        <button className="signup-btn" disabled={!image} >Sign up</button>
+        <button className="signup-btn" >Sign up</button>
 
         <p className="login-link">
           Already have an account? <Link to="/login">Log in</Link>

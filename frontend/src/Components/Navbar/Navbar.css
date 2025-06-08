@@ -9,14 +9,20 @@
 .navbar{
     display: flex; 
     justify-content: space-between;
-    padding: 17px 80px;
+    padding: 1px 80px;
     text-align: center;
     align-items: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
 }
 .logo{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 70px;
+    height: 70px;
 }
 .logo a{
     text-decoration: none;

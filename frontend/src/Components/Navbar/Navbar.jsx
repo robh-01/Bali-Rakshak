@@ -5,6 +5,10 @@ function Navbar() {
   return (
     <div className='navbar'> 
       <div className="logo">
+        <img
+              src="../src/assets/img/logo/logo-full-transparent.png"
+              alt="Cost-Effective"
+            />
         <a href="/home">Bali<span>Rakshak.</span></a>
       </div>
       <div className="link">

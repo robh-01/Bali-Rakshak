@@ -6,7 +6,10 @@
   text-align: left;
    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
+.top-logo img{
+    width: 70px;
+    height: 70px;
+}
 .login-container h2 {
   margin-bottom: 20px;
   font-size: 30px;
@@ -55,10 +58,11 @@
   text-decoration: underline;
 }
 .top-logo{
+  display: flex;
+  align-items: center;
     font-size: 30px;
     font-weight: 700;
-    padding: 10px 80px;
-    
+    padding: 0 80px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
 }
 .top-logo a{
