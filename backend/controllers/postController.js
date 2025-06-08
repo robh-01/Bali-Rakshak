@@ -1,4 +1,4 @@
-import { createPost, getPosts } from "../db/postQueries.js";
+import { createPost, getPosts, getPostById } from "../db/postQueries.js";
 import multer from "multer";
 
 const storage = multer.diskStorage({
@@ -77,7 +77,19 @@ async function allPostGet(req, res) {
 // return a post with title, content, imagePath, comments
 async function postByIdGet(req, res) {
   const postId = parseInt(req.params.postId);
-  
+  if (isNaN(postId)) {
+    return res.status(400).json({ error: "Invalid post ID" });
+  }
+  try {
+    const post = await getPostById(postId);
+    if (!post) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+    return res.status(200).json(post);
+  } catch (error) {
+    console.error("Error fetching post:", error);
+    return res.status(500).json({ error: "Internal server error" });
+  }
 }
 
-export { postCreatePost, allPostGet };
+export { postCreatePost, allPostGet, postByIdGet };
