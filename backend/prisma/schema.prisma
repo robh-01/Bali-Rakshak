@@ -18,7 +18,8 @@ model User {
   id       Int     @id @default(autoincrement())
   email    String  @unique
   password String
-  name     String?
+  isExpert Boolean @default(false)
+  name     String
   posts    Post[]
   comments Comment[]
 }
