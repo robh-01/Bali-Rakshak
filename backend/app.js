@@ -3,6 +3,8 @@ const app = express();
 
 import { indexRouter } from "./routes/indexRouter.js";
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use("", indexRouter);
 
 const PORT = process.env.PORT || 3000;
