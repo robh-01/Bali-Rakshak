@@ -7,7 +7,7 @@ function Home() {
   const [image, setImage] = useState(null);
   const [diagnosisLoading, setDiagnosisLoading] = useState(false);
   const [diagnosis, setDiagnosis] = useState("");
-  const [nepaliDiagnosis, setNepaliDiagnosis] = useState(""); 
+  const [nepaliDiagnosis, setNepaliDiagnosis] = useState("");
 
   const imageIn = (e) => {
     const file = e.target.files[0];
@@ -52,21 +52,24 @@ function Home() {
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let result = "";
-        
+
         const readStream = () => {
-          reader.read().then(({ done, value }) => {
-            if (done) {
+          reader
+            .read()
+            .then(({ done, value }) => {
+              if (done) {
+                setDiagnosisLoading(false);
+                return;
+              }
+              result += decoder.decode(value, { stream: true });
+              // Update state on each chunk arrival
+              setDiagnosis(result);
+              readStream();
+            })
+            .catch((error) => {
+              console.error("Stream reading error:", error);
               setDiagnosisLoading(false);
-              return;
-            }
-            result += decoder.decode(value, { stream: true });
-            // Update state on each chunk arrival
-            setDiagnosis(result);
-            readStream();
-          }).catch((error) => {
-            console.error("Stream reading error:", error);
-            setDiagnosisLoading(false);
-          });
+            });
         };
         readStream();
       })
@@ -106,9 +109,8 @@ function Home() {
           <h1>Crop Disease Diagnosis</h1>
           <p>
             Upload a photo of your crop to receive an AI-powered diagnosis and
-            potential solutions. 
+            potential solutions.
           </p>
-
 
           <div className={`upload-box ${image ? "no-border" : ""}`}>
             {image ? (
@@ -132,7 +134,6 @@ function Home() {
               </div>
             )}
           </div>
-
 
           <button
             className="diagnosis-btn"

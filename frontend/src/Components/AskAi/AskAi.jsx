@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./AskAi.css";
+import ReactMarkdown from "react-markdown";
 
 function AskAi() {
   const [messages, setMessages] = useState([
@@ -72,13 +73,13 @@ function AskAi() {
     <div className="ask-ai-container">
       {/* Header Section */}
       <div className="ask-ai-header">
-       <div className="ask-ai-header-content">
-         <h2>Rakshak AI</h2>
-        <p>
-          Get instant answers to your farming questions with our AI assistant. Ask
-          anything from crop management to pest control.
-        </p>
-       </div>
+        <div className="ask-ai-header-content">
+          <h2>Rakshak AI</h2>
+          <p>
+            Get instant answers to your farming questions with our AI assistant.
+            Ask anything from crop management to pest control.
+          </p>
+        </div>
       </div>
 
       {/* Chat Container */}
@@ -104,14 +105,19 @@ function AskAi() {
                   />
                 </div>
               )}
-              <div className="message-content">{msg.text}</div>
+              <div className="message-content">
+                <ReactMarkdown>{msg.text}</ReactMarkdown>
+              </div>
             </div>
           ))}
         </div>
 
         <div className="chat-input">
           <div className="user-profile">
-            <img src="https://th.bing.com/th/id/OIP.9QoXfqFLKt7SVlVT85ao0wHaE7?r=0&w=2048&h=1365&rs=1&pid=ImgDetMain" alt="User" />
+            <img
+              src="https://th.bing.com/th/id/OIP.9QoXfqFLKt7SVlVT85ao0wHaE7?r=0&w=2048&h=1365&rs=1&pid=ImgDetMain"
+              alt="User"
+            />
           </div>
           <input
             type="text"
