@@ -13,44 +13,33 @@ import HomePage from "./Components/HomePage/HomePage.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/home",
-    element: <HomePage/>
+    index: true,
+    element: <HomePage />,
   },
   {
-    path: "/",
-    element: <AppContainer />,
+    path: "/signup",
+    element: <SignUpPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "app",
+    // This is the main app route that will render the App component
+    element: <App />,
     children: [
       {
         index: true,
-        // This is the default route that will render the Diagnose component
-        element: <RedirectionPage />,
+        element: <Diagnose />,
       },
       {
-        path: "login",
-        element: <LoginPage />,
-      },
-       {
-        path: "signup",
-        element: <SignUpPage />,
+        path: "ask",
+        element: <AskAi />,
       },
       {
-        path: "app",
-        // This is the main app route that will render the App component
-        element: <App />,
-        children: [
-          {
-            index: true,
-            element: <Diagnose />,
-          },
-          {
-            path: "ask",
-            element: <AskAi />,
-          },
-          {
-            path: "community",
-            element: <div>Community Page</div>,
-          },
-        ],
+        path: "community",
+        element: <div>Community Page</div>,
       },
     ],
   },
