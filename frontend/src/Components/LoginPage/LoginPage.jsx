@@ -22,7 +22,7 @@ function LoginPage() {
         if (response.ok) {
           response.json().then((data) => {
             localStorage.setItem("token", data.token);
-            window.location.href = "/home";
+            window.location.href = "/app";
           });
         } else {
           alert("Login failed. Please check your credentials.");

@@ -1,8 +1,50 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
-import { Link } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
+    const controller = new AbortController();
+    fetch(`${import.meta.env.VITE_BACKEND_SERVER_URL}/user/verify`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      signal: controller.signal,
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Token verification failed");
+        }
+      })
+      .then((data) => {
+        if (data.status === "success") {
+          // User is authenticated, redirect to /app
+          navigate("/app");
+        }
+      })
+      .catch((error) => {
+        // Ignore fetch abort errors
+        if (error.name === "AbortError") {
+          console.log("Fetch aborted");
+          return;
+        }
+
+        console.error("Error verifying token:", error);
+      });
+
+    return () => {
+      controller.abort();
+    };
+  }, [navigate]);
   return (
     <>
       <div className="navbar">
@@ -151,18 +193,25 @@ function Home() {
       </div>
 
       {/* footer */}
-      
+
       <footer className="footer">
         <div className="footer-top">
           <div className="footer-links">
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+              <li>
+                <a href="#">About Us</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">Terms of Service</a>
+              </li>
             </ul>
           </div>
-         
         </div>
 
         <div className="footer-bottom">
