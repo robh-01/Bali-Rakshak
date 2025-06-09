@@ -17,14 +17,22 @@ async function getPosts() {
 
 async function getPostById(postId) {
   const post = await prisma.post.findUnique({
-    where: {
-      id: postId,
-    },
+    where: { id: postId },
     include: {
-      comments: true,
+      author: {
+        select: { name: true },
+      },
+      comments: {
+        select: {
+          id: true,
+          content: true,
+          author: {
+            select: { name: true },
+          },
+        },
+      },
     },
   });
-
   return post;
 }
 

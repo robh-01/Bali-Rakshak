@@ -6,7 +6,7 @@ async function addCommentPost(req, res) {
   //mock user data for testing purposes
   // In a real application, you would get this from the authenticated user session
   req.user = {
-    id: 1, // Mock user ID
+    id: 5, // Mock user ID
   };
 
   const { commentContent } = req.body;
