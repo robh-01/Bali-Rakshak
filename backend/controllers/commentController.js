@@ -1,26 +1,36 @@
 import { createComment } from "../db/commentQueries.js";
+import prisma from "../db/prismaClient.js";
+import { authenticateJWT } from "../middleware/authMiddleware.js";
 
-async function addCommentPost(req, res) {
-  let { postId } = req.params;
+const addCommentPost = [
+  authenticateJWT,
+  async (req, res) => {
+    let { postId } = req.params;
+    const { commentContent } = req.body;
+    const comment = {
+      content: commentContent,
+      authorId: req.user.id,
+    };
+    try {
+      // Create the comment
+      const addedComment = await createComment(+postId, comment);
 
-  //mock user data for testing purposes
-  // In a real application, you would get this from the authenticated user session
-  req.user = {
-    id: 5, // Mock user ID
-  };
+      // Fetch the comment again, including the author name
+      const commentWithAuthor = await prisma.comment.findUnique({
+        where: { id: addedComment.id },
+        select: {
+          id: true,
+          content: true,
+          author: { select: { name: true } },
+        },
+      });
 
-  const { commentContent } = req.body;
-  const comment = {
-    content: commentContent,
-    authorId: req.user.id, // Use the authenticated user's ID
-  };
-  try {
-    const addedComment = await createComment(+postId, comment);
-    res.status(201).json(addedComment);
-  } catch (error) {
-    console.error("Error adding comment:", error);
-    res.status(500).json({ error: "Failed to add comment" });
-  }
-}
+      res.status(201).json(commentWithAuthor);
+    } catch (error) {
+      console.error("Error adding comment:", error);
+      res.status(500).json({ error: "Failed to add comment" });
+    }
+  },
+];
 
 export { addCommentPost };

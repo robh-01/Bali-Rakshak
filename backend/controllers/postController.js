@@ -1,5 +1,6 @@
 import { createPost, getPosts, getPostById } from "../db/postQueries.js";
 import multer from "multer";
+import { authenticateJWT } from "../middleware/authMiddleware.js";
 
 const storage = multer.diskStorage({
   //set the destination to save the file
@@ -32,14 +33,10 @@ const cpUpload = upload.fields([
 
 const postCreatePost = [
   cpUpload,
+  authenticateJWT, // Ensure the user is authenticated before creating a post
   (req, res, next) => {
     //   path: "postImages/1749404616145-ba20c1c4.jpg",
     // console.dir(req.files, { depth: null });
-
-    // mocking user for now
-    req.user = {
-      id: 5,
-    };
 
     const { postTitle, postContent } = req.body;
     const postImagePath = req.files.postImage[0].path;
