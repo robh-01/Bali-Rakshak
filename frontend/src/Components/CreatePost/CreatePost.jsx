@@ -30,6 +30,9 @@ const CreatePost = () => {
         `${import.meta.env.VITE_BACKEND_SERVER_URL}/post/create`,
         {
           method: "POST",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
           body: formData,
         }
       );

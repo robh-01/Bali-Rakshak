@@ -1,14 +1,19 @@
 import React from "react";
 import "./Navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const handleLogout = () => {
-    // Clear the token from local storage
     localStorage.removeItem("token");
-    // Redirect to the home page
     return navigate("/", { replace: true });
+  };
+
+  // Helper to check active route
+  const isActive = (path) => {
+    return location.pathname === path;
   };
 
   return (
@@ -22,19 +27,21 @@ function Navbar() {
           Bali<span>Rakshak.</span>
         </Link>
       </div>
+
       <div className="link">
         <ul>
-          <li>
-            <Link to="/app">Diagnose</Link>
+          <li className={isActive("/app") ? "active" : ""}>
+            <Link to="/app">Diagnosis</Link>
           </li>
-          <li>
+          <li className={isActive("/app/ask") ? "active" : ""}>
             <Link to="/app/ask">Rakshak AI</Link>
           </li>
-          <li>
+          <li className={isActive("/app/community") ? "active" : ""}>
             <Link to="/app/community">Community</Link>
           </li>
         </ul>
       </div>
+
       <div className="logout">
         <button onClick={handleLogout}>Logout</button>
       </div>

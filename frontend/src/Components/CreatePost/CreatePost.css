@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   animation: fadeInPage 1s ease;
 }
 
@@ -59,7 +59,7 @@
 
 .create-post-container input[type="text"]:focus,
 .create-post-container textarea:focus {
-  border-color: #4FD12B;
+  border-color: #4fd12b;
   outline: none;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .image-upload input:hover {
-  border-color: #4FD12B;
+  border-color: #4fd12b;
 }
 
 /* Image Preview */
@@ -97,7 +97,7 @@
 /* Submit Button */
 .create-post-container button {
   margin-top: 25px;
-  background-color: #4FD12B;
+  background-color: #4fd12b;
   color: white;
   padding: 12px 28px;
   border: none;

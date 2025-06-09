@@ -108,11 +108,9 @@ const PostDetail = () => {
         {/* Comments List */}
         <div className="comments-list">
           {post?.comments && post.comments.length > 0 ? (
-            post.comments.map((cmt) => (
+            [...post.comments].reverse().map((cmt) => (
               <div key={cmt.id} className="comment-item">
-                <div className="comment-avatar">
-                  <img src="/path-to-user-avatar.jpg" alt="User" />
-                </div>
+                <div className="comment-avatar"></div>
                 <div className="comment-content">
                   <strong>{cmt.author?.name}</strong>
                   <p>{cmt.content}</p>
