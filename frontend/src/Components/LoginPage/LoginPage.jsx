@@ -41,7 +41,7 @@ function LoginPage() {
           src="../src/assets/img/logo/logo-full-transparent.png"
           alt="Cost-Effective"
         />
-        <a href="/home">
+        <a href="/">
           Bali<span>Rakshak.</span>
         </a>
       </div>
