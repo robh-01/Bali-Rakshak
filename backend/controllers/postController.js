@@ -38,7 +38,7 @@ const postCreatePost = [
 
     // mocking user for now
     req.user = {
-      id: 1,
+      id: 5,
     };
 
     const { postTitle, postContent } = req.body;
