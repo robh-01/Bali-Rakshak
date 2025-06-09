@@ -42,13 +42,33 @@ function Home() {
     formData.append("crop-image", blob, "upload.jpg");
 
     fetch(`${import.meta.env.VITE_BACKEND_SERVER_URL}/prescription`, {
-      method: "POST", //GET METHOD SINCE WE ARE
+      method: "POST",
       body: formData,
     })
-      .then((response) => response.text())
-      .then((text) => {
-        setDiagnosis(text);
-        setDiagnosisLoading(false);
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Diagnosis request failed");
+        }
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let result = "";
+        
+        const readStream = () => {
+          reader.read().then(({ done, value }) => {
+            if (done) {
+              setDiagnosisLoading(false);
+              return;
+            }
+            result += decoder.decode(value, { stream: true });
+            // Update state on each chunk arrival
+            setDiagnosis(result);
+            readStream();
+          }).catch((error) => {
+            console.error("Stream reading error:", error);
+            setDiagnosisLoading(false);
+          });
+        };
+        readStream();
       })
       .catch((error) => {
         console.error(error);

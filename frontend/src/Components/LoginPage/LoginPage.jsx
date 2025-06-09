@@ -38,7 +38,7 @@ function LoginPage() {
     <>
       <div className="top-logo">
         <img
-          src="../src/assets/img/logo/logo-full-transparent.png"
+          src="/assets/img/logo/logo-full-transparent.png"
           alt="Cost-Effective"
         />
         <a href="/">

@@ -1,0 +1,145 @@
+/* Page Layout */
+.create-post-page {
+  min-height: 100vh;
+  background: linear-gradient(to right, #f3fdf4, #e8f9ec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeInPage 1s ease;
+}
+
+/* Form Box */
+.create-post-container {
+  background-color: #ffffff;
+  padding: 40px 35px;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 18px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.6s ease;
+}
+
+/* Headings */
+.create-post-container h2 {
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #2f2f2f;
+}
+
+.create-post-container p {
+  font-size: 14px;
+  color: #5f5f5f;
+  margin-bottom: 25px;
+}
+
+/* Labels */
+.create-post-container label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+  margin-top: 15px;
+}
+
+/* Inputs & Textarea */
+.create-post-container input[type="text"],
+.create-post-container textarea {
+  width: 95%;
+  padding: 14px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  background-color: #fdfdfd;
+  transition: border 0.3s;
+}
+
+.create-post-container input[type="text"]:focus,
+.create-post-container textarea:focus {
+  border-color: #4FD12B;
+  outline: none;
+}
+
+/* File Upload */
+.image-upload input {
+  width: 95%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fafafa;
+  transition: border-color 0.3s;
+}
+
+.image-upload input:hover {
+  border-color: #4FD12B;
+}
+
+/* Image Preview */
+.image-preview {
+  margin-top: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: fadeInImage 0.5s ease-in;
+}
+
+.image-preview img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Submit Button */
+.create-post-container button {
+  margin-top: 25px;
+  background-color: #4FD12B;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.create-post-container button:hover {
+  background-color: #3db51e;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

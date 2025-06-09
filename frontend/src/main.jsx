@@ -8,6 +8,8 @@ import AskAi from "./Components/AskAi/AskAi.jsx";
 import LoginPage from "./Components/LoginPage/LoginPage.jsx";
 import SignUpPage from "./Components/SignUpPage/SignUpPage.jsx";
 import HomePage from "./Components/HomePage/HomePage.jsx";
+import CommunityPage from "./Components/CommunityPage/CommunityPage.jsx";
+import CreatePost from "./Components/CreatePost/CreatePost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +39,21 @@ const router = createBrowserRouter([
       },
       {
         path: "community",
-        element: <div>Community Page</div>,
+        element: <CommunityPage />,
+        children: [
+          {
+            index: true,
+            element: <div>Community Home</div>,
+          },
+          {
+            path: "post/:postId",
+            element: <div>post will be visible here</div>,
+          },
+          {
+            path: "new",
+            element: <CreatePost/>,
+          },
+        ],
       },
     ],
   },

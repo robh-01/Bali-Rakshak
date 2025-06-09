@@ -50,10 +50,10 @@ function Home() {
       <div className="navbar">
         <div className="logo">
           <img
-            src="../src/assets/img/logo/logo-full-transparent.png"
+            src="/assets/img/logo/logo-full-transparent.png"
             alt="Cost-Effective"
           />
-          <a href="/home">
+          <a href="/">
             Bali<span>Rakshak.</span>
           </a>
         </div>
@@ -134,10 +134,7 @@ function Home() {
 
         <div className="benefits-box">
           <div className="benefit-card">
-            <img
-              src="../src/assets/img/secondary-image-3.jpg"
-              alt="Expert Support"
-            />
+            <img src="/assets/img/secondary-image-3.jpg" alt="Expert Support" />
             <div>
               <h2>Expert Support</h2>
               <p>
@@ -149,7 +146,7 @@ function Home() {
 
           <div className="benefit-card">
             <img
-              src="../src/assets/img/secondary-image-2.jpg"
+              src="/assets/img/secondary-image-2.jpg"
               alt="Cost-Effective"
             />
             <div>
@@ -163,7 +160,7 @@ function Home() {
 
           <div className="benefit-card">
             <img
-              src="../src/assets/img/secondary-image-1.jpg"
+              src="/assets/img/secondary-image-1.jpg"
               alt="Early Detection"
               className="secondary-image-3"
             />
