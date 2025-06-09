@@ -4,7 +4,7 @@ import "./Footer.css"
 function Footer() {
   return (
     <div>
-      <div className="footer">
+      <div className="footer-main">
         
         <p>© 2025 Bali Rakshak. All rights reserved.</p>
       </div>

@@ -8,9 +8,9 @@ function Home() {
       <div className="navbar">
         <div className="logo">
           <img
-              src="../src/assets/img/logo/logo-full-transparent.png"
-              alt="Cost-Effective"
-            />
+            src="../src/assets/img/logo/logo-full-transparent.png"
+            alt="Cost-Effective"
+          />
           <a href="/home">
             Bali<span>Rakshak.</span>
           </a>
@@ -144,15 +144,30 @@ function Home() {
             Join Bali Rakshak today and take the first step toward healthier,
             more productive farming.
           </p>
-          <a href="/signup" className="cta-section-a">Get Started</a>
+          <a href="/signup" className="cta-section-a">
+            Get Started
+          </a>
         </div>
       </div>
 
       {/* footer */}
+      
       <footer className="footer">
-        <p>
-          &copy; {new Date().getFullYear()} BaliRakshak. All rights reserved.
-        </p>
+        <div className="footer-top">
+          <div className="footer-links">
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+         
+        </div>
+
+        <div className="footer-bottom">
+          <p>© 2025 BaliRakshak. All rights reserved.</p>
+        </div>
       </footer>
     </>
   );
