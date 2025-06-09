@@ -46,15 +46,16 @@
     color: black;
 }
 
-.logout a{
+.logout button{
     text-decoration: none;
     color: black;
     margin-left: 18px;
     background: #8CD178;
-    padding: 8px 25px;
-    border-radius: 14px;
+    padding: 11px 27px;
+    border-radius: 20px;
+    border: none;
 }
-.link a:hover{
+.link button:hover{
     color: #8CD178;
     text-decoration: underline;
     transition: .5s;

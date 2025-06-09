@@ -10,6 +10,7 @@ import SignUpPage from "./Components/SignUpPage/SignUpPage.jsx";
 import HomePage from "./Components/HomePage/HomePage.jsx";
 import CommunityPage from "./Components/CommunityPage/CommunityPage.jsx";
 import CreatePost from "./Components/CreatePost/CreatePost.jsx";
+import CommunityPagePosts from "./Components/CommunityPagePosts/CommunityPagePosts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <div>Community Home</div>,
+            element: <CommunityPagePosts />,
           },
           {
             path: "post/:postId",

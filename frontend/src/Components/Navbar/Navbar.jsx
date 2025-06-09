@@ -1,12 +1,14 @@
 import React from "react";
 import "./Navbar.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
   const handleLogout = () => {
     // Clear the token from local storage
     localStorage.removeItem("token");
     // Redirect to the home page
-    window.location.href = "/";
+    return navigate("/", { replace: true });
   };
 
   return (
@@ -16,25 +18,25 @@ function Navbar() {
           src="/assets/img/logo/logo-full-transparent.png"
           alt="Cost-Effective"
         />
-        <a href="/">
+        <Link to="/">
           Bali<span>Rakshak.</span>
-        </a>
+        </Link>
       </div>
       <div className="link">
         <ul>
           <li>
-            <a href="/app">Diagnose</a>
+            <Link to="/app">Diagnose</Link>
           </li>
           <li>
-            <a href="/app/ask">Ask AI</a>
+            <Link to="/app/ask">Ask AI</Link>
           </li>
           <li>
-            <a href="/app/community">Community</a>
+            <Link to="/app/community">Community</Link>
           </li>
         </ul>
       </div>
       <div className="logout">
-        <a onClick={handleLogout}>Logout</a>
+        <button onClick={handleLogout}>Logout</button>
       </div>
     </div>
   );

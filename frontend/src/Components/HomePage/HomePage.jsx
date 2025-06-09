@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./HomePage.css";
 
 function Home() {
@@ -53,17 +53,26 @@ function Home() {
             src="/assets/img/logo/logo-full-transparent.png"
             alt="Cost-Effective"
           />
-          <a href="/">
+          {/* <a href="/">
             Bali<span>Rakshak.</span>
-          </a>
+          </a> */}
+          <Link to="/">
+            Bali<span>Rakshak.</span>
+          </Link>
         </div>
         <div className="btns">
-          <a href="/signup" className="sign-in">
+          {/* <a href="/signup" className="sign-in">
             Sign up
-          </a>
-          <a href="/login" className="login">
+          </a> */}
+          <Link to="/signup" className="sign-in">
+            Sign up
+          </Link>
+          {/* <a href="/login" className="login">
             Login
-          </a>
+          </a> */}
+          <Link to="/login" className="login">
+            Login
+          </Link>
         </div>
       </div>
 
@@ -77,7 +86,7 @@ function Home() {
               <h1>Instant Crop Disease Detection Using a Single Photo</h1>
 
               <button>
-                <a href="/signup">Get Started</a>
+                <Link to="/signup">Get Started</Link>
               </button>
             </div>
           </div>
@@ -145,10 +154,7 @@ function Home() {
           </div>
 
           <div className="benefit-card">
-            <img
-              src="/assets/img/secondary-image-2.jpg"
-              alt="Cost-Effective"
-            />
+            <img src="/assets/img/secondary-image-2.jpg" alt="Cost-Effective" />
             <div>
               <h2>Cost-Effective Solutions</h2>
               <p>
@@ -183,9 +189,12 @@ function Home() {
             Join Bali Rakshak today and take the first step toward healthier,
             more productive farming.
           </p>
-          <a href="/signup" className="cta-section-a">
+          {/* <a href="/signup" className="cta-section-a">
             Get Started
-          </a>
+          </a> */}
+          <Link to="/signup" className="cta-section-a">
+            Get Started
+          </Link>
         </div>
       </div>
 
