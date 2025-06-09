@@ -9,7 +9,8 @@ function Home() {
   const [diagnosis, setDiagnosis] = useState("");
   const [nepaliDiagnosis, setNepaliDiagnosis] = useState("");
   const [isDiagnosisComplete, setIsDiagnosisComplete] = useState(false);
-
+  const [nepaliTranslationLoading, setNepaliTranslationLoading] =
+    useState(false);
   const imageIn = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -90,6 +91,7 @@ function Home() {
 
   // Quick translation helper using Google Translate unofficial API
   function translateToNepali(text) {
+    setNepaliTranslationLoading(true);
     fetch(
       `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ne&dt=t&q=${encodeURIComponent(
         text
@@ -99,8 +101,12 @@ function Home() {
       .then((data) => {
         let translatedText = data[0].map((item) => item[0]).join("");
         setNepaliDiagnosis(translatedText);
+        setNepaliTranslationLoading(false);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        setNepaliTranslationLoading(false);
+      });
   }
 
   function handleDiagnosisTranslationToNepali() {

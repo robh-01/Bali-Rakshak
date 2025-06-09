@@ -112,7 +112,7 @@ const PostDetail = () => {
               <div key={cmt.id} className="comment-item">
                 <div className="comment-avatar"></div>
                 <div className="comment-content">
-                  <strong>{cmt.author?.name}</strong>
+                  <strong>{cmt.author?.name}{cmt.author.isExpert? <span className="expert"> Expert</span>:" "}</strong> 
                   <p>{cmt.content}</p>
                 </div>
               </div>

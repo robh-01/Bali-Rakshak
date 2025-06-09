@@ -27,7 +27,7 @@ async function getPostById(postId) {
           id: true,
           content: true,
           author: {
-            select: { name: true },
+            select: { name: true, isExpert: true },
           },
         },
       },
