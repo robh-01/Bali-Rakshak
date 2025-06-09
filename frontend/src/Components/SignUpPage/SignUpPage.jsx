@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 function SignUp() {
   const [isChecked, setIsChecked] = useState(false);
   const [image, setImage] = useState(null);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
 
   const imageIn = (e) => {
     const file = e.target.files[0];
@@ -17,14 +20,53 @@ function SignUp() {
     }
   };
 
+  function handleSignupClick() {
+    if (!name || !phone || !password) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    if (isChecked && !image) {
+      alert("Please upload your verification document.");
+      return;
+    }
+
+    fetch(`${import.meta.env.VITE_BACKEND_SERVER_URL}/user/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        isExpert: isChecked,
+        phone: phone,
+        password: password,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Signup successful! Please log in.");
+          window.location.href = "/login";
+        } else {
+          alert("Signup failed. Please try again later.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error during login:", error);
+        alert("An error occurred signing up. Please try again later.");
+      });
+  }
+
   return (
     <>
       <div className="top-logo">
         <img
-              src="../src/assets/img/logo/logo-full-transparent.png"
-              alt="Cost-Effective"
-            />
-        <a href="/home">Bali<span>Rakshak.</span></a>
+          src="../src/assets/img/logo/logo-full-transparent.png"
+          alt="Cost-Effective"
+        />
+        <a href="/home">
+          Bali<span>Rakshak.</span>
+        </a>
       </div>
 
       <div className="signup-container">
@@ -33,17 +75,35 @@ function SignUp() {
         <form>
           <div className="form-group">
             <label>Full Name</label>
-            <input type="text" placeholder="Enter your name" name="name" />
+            <input
+              type="text"
+              placeholder="Enter your name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
 
           <div className="form-group">
             <label>Phone Number</label>
-            <input type="text" placeholder="Enter your phone number" name="phone" />
+            <input
+              type="text"
+              placeholder="Enter your phone number"
+              name="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
           </div>
 
           <div className="form-group">
             <label>Password</label>
-            <input type="password" placeholder="Enter your password" name="password" />
+            <input
+              type="password"
+              placeholder="Enter your password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
 
           {/* Expert checkbox */}
@@ -64,7 +124,10 @@ function SignUp() {
               ) : (
                 <div className="document-upload">
                   <h4>Upload Verification Document</h4>
-                  <p>Please upload a photo of your official document for verification.</p>
+                  <p>
+                    Please upload a photo of your official document for
+                    verification.
+                  </p>
                   <label className="document-upload-btn">
                     Upload
                     <input
@@ -80,7 +143,9 @@ function SignUp() {
           )}
         </form>
 
-        <button className="signup-btn" >Sign up</button>
+        <button className="signup-btn" onClick={handleSignupClick}>
+          Sign up
+        </button>
 
         <p className="login-link">
           Already have an account? <Link to="/login">Log in</Link>
