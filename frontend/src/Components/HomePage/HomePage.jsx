@@ -67,14 +67,14 @@ function Home() {
           {/* <a href="/signup" className="sign-in">
             Sign up
           </a> */}
-          <Link to="/signup" className="sign-in">
-            Sign up
+          <Link to="/signup" className="sign-in"> 
+            Sign Up
           </Link>
           {/* <a href="/login" className="login">
             Login
           </a> */}
           <Link to="/login" className="login">
-            Login
+            Log In
           </Link>
         </div>
       </div>

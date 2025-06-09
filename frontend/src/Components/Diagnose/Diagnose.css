@@ -70,6 +70,7 @@ button:disabled {
 .diagnosis-btn {
   padding: 11px 17px;
   border-radius: 20px;
+  color: white;
   border: none;
   background: #03A63C; /* Green for Get Diagnosis */
   margin: 20px 0;
@@ -78,7 +79,8 @@ button:disabled {
 }
 
 .diagnosis-btn:hover{
-  background: rgb(92, 204, 61);
+  background: #027333;
+  color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
 }

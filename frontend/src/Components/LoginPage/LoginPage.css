@@ -1,8 +1,8 @@
 .login-container {
-  max-width: 370px;
-  margin: 70px auto;
+  max-width: 500px;
+  margin: 50px auto;
   height: auto;
-  min-height: 330px;
+  min-height: 400px;
   padding: 20px;
   text-align: left;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -74,6 +74,7 @@
 .form-group label {
   font-weight: 500;
   margin-bottom: 6px;
+  font-size: 14px;
 }
 
 .form-group input {
@@ -92,8 +93,8 @@
 
 .login-btn {
   width: 100%;
-  padding: 12px;
-  background-color: #54d11f;
+  padding: 9px;
+  background-color: #03A63C;
   color: white;
   font-weight: 600;
   font-size: 16px;
@@ -105,7 +106,7 @@
 }
 
 .login-btn:hover {
-  background-color: #4fc51c;
+  background-color: #027333;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }

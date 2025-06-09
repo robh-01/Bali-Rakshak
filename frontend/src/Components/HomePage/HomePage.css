@@ -1,29 +1,41 @@
- a{
-  color:  white;;
+a {
+  color: white;
   text-decoration: none;
- }
- .sign-in{
-    text-decoration: none;
-    color: black;
-    margin-left: 18px;
-    background: #7bda61;
-    padding: 8px 25px;
-    border-radius: 20px;
-    transition: .5s;
- }
- .sign-in:hover{
-    background-color: #4FD12B;
- }
+}
 
- .login{
-    text-decoration: none;
-    color: black;
-    border: 1px solid rgba(0, 0, 0, 0.233);
-    margin-left: 18px;
-    background: #F2F5F2;
-    padding: 8px 25px;
-    border-radius: 20px;
- }
+.sign-in {
+  background: linear-gradient(to right, #66cc4a, #027333);
+  border: none;
+  padding: 9px 27px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: .3;
+}
+.sign-in:hover {
+  box-shadow: 0 6px 16px rgba(102, 204, 74, .2);
+    background: #027333;
+
+}
+
+.login {
+  text-decoration: none;
+  color: black;
+    font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.233);
+  margin-left: 18px;
+  background: #f2f5f2;
+  padding: 9px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+.login:hover {
+  box-shadow: 0 6px 16px rgba(82, 87, 80, .2);
+}
 
 /* HERO SECTION */
 .hero {
@@ -76,26 +88,26 @@
 
 .textbox p {
   font-size: 18px;
-  color: #a3e635;
+  color: #03A63C;
   font-weight: 600;
   margin-bottom: 20px;
 }
 
 .textbox button {
-  margin-top: 15px;
-  background: #22c55e;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 16px;
+  background: linear-gradient(to right, #66cc4a, #027333);
   border: none;
+  padding: 9px 27px;
+  border-radius: 20px;
+  color: white;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: 600;
+  font-size: 15px;
+  transition: .3;
 }
 
 .textbox button:hover {
-  background: #16a34a;
-}
+ box-shadow: 0 6px 16px rgba(102, 204, 74, .2);
+    background: #027333;}
 
 /* Animation */
 @keyframes fadeInLeft {
@@ -108,8 +120,6 @@
     transform: translateX(0);
   }
 }
-
-
 
 /* Features */
 .feature {
@@ -167,7 +177,6 @@
   color: #555;
 }
 
-
 /* Benefits */
 .benefits {
   padding: 60px 80px;
@@ -218,7 +227,7 @@
   height: 200px;
   background-position: center;
   background-size: contain;
-   object-fit: cover;
+  object-fit: cover;
   margin-bottom: 10px;
   border-radius: 20px;
 }
@@ -238,8 +247,9 @@
 .cta-section {
   width: auto;
   padding: 80px 20px;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url("https://images.pexels.com/photos/4167549/pexels-photo-4167549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://i.pinimg.com/1200x/e5/b5/72/e5b57224bf284958d3450f7bdedb757c.jpg")
+      center/cover no-repeat;
   color: white;
   text-align: center;
   border-radius: 10px;
@@ -257,51 +267,50 @@
   margin-bottom: 30px;
 }
 
-.cta-content a {
-  padding: 12px 28px;
-  font-size: 16px;
-  background-color: #4FD12B;
+.cta-section-a {
+  background: linear-gradient(to right, #66cc4a, #027333);
   border: none;
-  border-radius: 25px;
+  padding: 9px 27px;
+  border-radius: 20px;
   color: white;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 600;
+  font-size: 15px;
+  transition: .3;
 }
 
-.cta-content button:hover {
-  background-color: #3db51e;
-}
+.cta-section-a:hover {
+ box-shadow: 0 6px 16px rgba(102, 204, 74, .2);
+    background: #027333;}
 
 /* Footer */
-.footer{
+.footer {
   color: black;
   padding: 0px 80px;
 }
-.footer-links ul{
+.footer-links ul {
   display: flex;
   justify-content: space-between;
 }
-.footer-links ul li{
+.footer-links ul li {
   list-style: none;
 }
-.footer a{
+.footer a {
   color: black;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
-  transition: .5s;
+  transition: 0.5s;
   text-transform: uppercase;
 }
-.footer a:hover{
-  color: #3db51e;
+.footer a:hover {
+  color: #025939;
   text-decoration: underline;
-  font-size: 20px;
-  font-weight: 600;
 }
-.footer-links{
+.footer-links {
   padding: 30px 250px;
 }
 
-.footer-bottom{
+.footer-bottom {
   text-align: center;
   color: rgba(0, 0, 0, 0.575);
   padding: 10px 0;

@@ -1,6 +1,6 @@
 .signup-container {
-  max-width: 370px;
-  margin: 70px auto;
+  max-width: 500px;
+  margin: 50px auto;
   min-height: 400px;
   padding: 20px;
   text-align: left;
@@ -31,6 +31,7 @@
 
 .form-group label {
   font-weight: 500;
+  font-size: 14px;
   margin-bottom: 6px;
 }
 
@@ -60,21 +61,20 @@
 
 .signup-btn {
   width: 100%;
-  padding: 12px;
-  background-color: #54d11f;
+  padding: 9px;
+  background-color: #03A63C;
   color: white;
   font-weight: 600;
   font-size: 16px;
-  border: none;
   margin-top: 15px;
   border-radius: 20px;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .signup-btn:hover {
-  background-color: #4fc51c;
+  background-color: #027333;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
