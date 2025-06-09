@@ -13,7 +13,7 @@ function Navbar() {
       </div>
       <div className="link">
         <ul>
-            <li><a href="/">Diagnose</a></li>
+            <li><a href="/app">Diagnose</a></li>
             <li><a href="/app/ask">Ask AI</a></li>
             <li><a href="/app/community">Community</a></li>
         </ul>
