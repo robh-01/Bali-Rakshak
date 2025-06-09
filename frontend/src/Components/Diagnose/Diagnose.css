@@ -1,31 +1,35 @@
-.container{
-    width: 100%;
-    min-height: 85vh;
-    
+/* General Styles */
+.container {
+  width: 100%;
+  min-height: 85vh;
 }
-.box{ 
-    height: auto;
-    padding: 30px 80px;
-    display: flex;
-    justify-content: center;
-    width:auto;
-}
-.inside{ 
-    width: 100%;
-} 
 
-.inside h1{
-    padding: 10px 0px;
-    font-size: 34px;
-    font-weight: 650;
+.box {
+  height: auto;
+  padding: 30px 80px;
+  display: flex;
+  justify-content: center;
+  width: auto;
 }
-.inside p{
-    color: rgba(0, 0, 0, 0.863);
-    padding: 10px 0;
-    padding-bottom: 15px;
-    font-size: 16px;
+
+.inside {
+  width: 100%;
 }
-/* inout box */
+
+.inside h1 {
+  padding: 10px 0px;
+  font-size: 34px;
+  font-weight: 650;
+}
+
+.inside p {
+  color: rgba(0, 0, 0, 0.863);
+  padding: 10px 0;
+  padding-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Input Box */
 .upload-box {
   width: 100%;
   min-height: 300px;
@@ -42,41 +46,122 @@
   border: none;
 }
 
-.uploaded-img{
-    max-height: 600px;
-    width: auto;
-    background-position: center;
-    background-size: contain;
-    
+.uploaded-img {
+  max-height: 600px;
+  width: auto;
+  background-position: center;
+  background-size: contain;
 }
 
-
-
-button{
-    cursor: pointer;
-}
-button:disabled{
-    cursor: not-allowed;
-}
-.upload-label{
-    border: 1px solid black;
-    padding: 5px 20px;
-    border-radius: 20px;
+button {
+  cursor: pointer;
 }
 
-.diagnosis-btn{
-    padding: 11px 17px;
-    border-radius: 20px;
-    border: none;
-    background: #81e665;
-    margin:20px 0;
+button:disabled {
+  cursor: not-allowed;
 }
-.items{
-    width: 37%;
+
+.upload-label {
+  border: 1px solid black;
+  padding: 5px 20px;
+  border-radius: 20px;
 }
-.items h1{
-    font-size: 25px;
+
+.diagnosis-btn {
+  padding: 11px 17px;
+  border-radius: 20px;
+  border: none;
+  background: #81e665; /* Green for Get Diagnosis */
+  margin: 20px 0;
+  margin-right: 14px;
 }
-.items p{
-    font-size: 12px;
+
+.reset-btn {
+  padding: 11px 17px;
+  border-radius: 20px;
+  border: none;
+  background: #ff5722; /* Orange for Reset */
+  margin: 20px 0;
+}
+
+.items {
+  width: 37%;
+}
+
+.items h1 {
+  font-size: 25px;
+}
+
+.items p {
+  font-size: 12px;
+}
+
+/* Diagnosis Results */
+.diagnosis-results {
+  margin-top: 20px;
+}
+
+.diagnosis-results h3 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.diagnosis-results p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.diagnosis-results strong {
+  font-weight: bold;
+}
+
+.diagnosis-results ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.diagnosis-results li {
+  margin-bottom: 15px;
+}
+
+/* Common Button Styles */
+.action-btn {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset Button */
+.reset-btn {
+  background: #ff5722; /* Vibrant Orange */
+  color: white;
+}
+
+.reset-btn:hover {
+  background: #e64a19;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+}
+
+/* Translate Button */
+.translate-btn {
+  background: #9c27b0; /* Deep Purple */
+  color: white;
+}
+
+.translate-btn:hover {
+  background: #8e24aa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
 }
