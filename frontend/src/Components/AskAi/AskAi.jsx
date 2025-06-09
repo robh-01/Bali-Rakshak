@@ -126,7 +126,7 @@ function AskAi() {
             placeholder="Type your question here..."
             onKeyDown={(e) => {
               if (e.key === "Enter") {
-                e.preventDefault();
+                e.preventDefault(); 
                 sendMessage();
               }
             }}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./CommunityPagePosts.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CommunityPage = () => {
   const [posts, setPosts] = useState([]);
@@ -24,6 +24,11 @@ const CommunityPage = () => {
         setLoading(false);
       });
   }, []);
+  const navigate = useNavigate();
+
+  function handleCardClick(postId) {
+    return navigate(`/app/community/post/${postId}`);
+  }
 
   return (
     <div className="community-page">
@@ -45,7 +50,11 @@ const CommunityPage = () => {
         {!loading &&
           !error &&
           posts.map((post) => (
-            <div key={post.id} className="discussion-card">
+            <div
+              key={post.id}
+              className="discussion-card"
+              onClick={() => handleCardClick(post.id)}
+            >
               <div className="discussion-content">
                 <h3>{post.title}</h3>
                 <p>{post.content || post.description}</p>

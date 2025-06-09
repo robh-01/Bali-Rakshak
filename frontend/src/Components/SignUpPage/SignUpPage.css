@@ -1,16 +1,26 @@
-
 .signup-container {
   max-width: 370px;
   margin: 70px auto;
   min-height: 400px;
-  padding: 20px; 
+  padding: 20px;
   text-align: left;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  background-color: #ffffff;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .signup-container h2 {
   margin-bottom: 20px;
   font-size: 32px;
+  color: #2f2f2f;
 }
 
 .form-group {
@@ -32,6 +42,12 @@
   font-size: 14px;
 }
 
+.form-group input:focus {
+  outline: none;
+  background-color: #eaf5ec;
+  box-shadow: 0 0 0 3px rgba(84, 209, 31, 0.4);
+}
+
 .checkbox-group {
   margin: 12px 0;
   display: flex;
@@ -50,13 +66,27 @@
   font-weight: 600;
   font-size: 16px;
   border: none;
+  margin-top: 15px;
   border-radius: 20px;
-  margin-top: 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-button:disabled{
+
+.signup-btn:hover {
+  background-color: #4fc51c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.signup-btn:active {
+  transform: translateY(0);
+}
+
+button:disabled {
   cursor: not-allowed;
 }
+
 .login-link {
   margin-top: 14px;
   font-size: 14px;
@@ -70,6 +100,7 @@ button:disabled{
 
 .expert-checkbox {
   font-weight: 500;
+  font-size: 14px;
 }
 
 .popup-box {
@@ -80,12 +111,14 @@ button:disabled{
   margin-top: 15px;
   height: 150px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  align-items: center;
+  padding: 10px;
 }
 
 .popup-box h4 {
-   font-size: 16px;
+  font-size: 16px;
   color: #333;
   padding: 6px;
 }
@@ -93,11 +126,10 @@ button:disabled{
 .popup-box p {
   color: #666;
   margin-bottom: 15px;
-   font-size: 12px;
+  font-size: 12px;
 }
 
-.document-upload-btn{
-  
+.document-upload-btn {
   border: 1px solid rgba(0, 0, 0, 0.74);
   color: rgba(0, 0, 0, 0.74);
   border-radius: 20px;
@@ -110,3 +142,4 @@ button:disabled{
   object-fit: cover;
   border-radius: 10px;
 }
+

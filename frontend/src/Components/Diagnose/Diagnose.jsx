@@ -7,7 +7,8 @@ function Home() {
   const [image, setImage] = useState(null);
   const [diagnosisLoading, setDiagnosisLoading] = useState(false);
   const [diagnosis, setDiagnosis] = useState("");
-  const [nepaliDiagnosis, setNepaliDiagnosis] = useState(""); 
+  const [nepaliDiagnosis, setNepaliDiagnosis] = useState("");
+  const [isDiagnosisComplete, setIsDiagnosisComplete] = useState(false);
 
   const imageIn = (e) => {
     const file = e.target.files[0];
@@ -37,6 +38,7 @@ function Home() {
     setDiagnosisLoading(true);
 
     // Convert the base64 image to a Blob
+    setIsDiagnosisComplete(true); // Mark diagnosis as complete
     const blob = dataURItoBlob(image);
     const formData = new FormData();
     formData.append("crop-image", blob, "upload.jpg");
@@ -52,21 +54,24 @@ function Home() {
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let result = "";
-        
+
         const readStream = () => {
-          reader.read().then(({ done, value }) => {
-            if (done) {
+          reader
+            .read()
+            .then(({ done, value }) => {
+              if (done) {
+                setDiagnosisLoading(false);
+                return;
+              }
+              result += decoder.decode(value, { stream: true });
+              // Update state on each chunk arrival
+              setDiagnosis(result);
+              readStream();
+            })
+            .catch((error) => {
+              console.error("Stream reading error:", error);
               setDiagnosisLoading(false);
-              return;
-            }
-            result += decoder.decode(value, { stream: true });
-            // Update state on each chunk arrival
-            setDiagnosis(result);
-            readStream();
-          }).catch((error) => {
-            console.error("Stream reading error:", error);
-            setDiagnosisLoading(false);
-          });
+            });
         };
         readStream();
       })
@@ -75,6 +80,13 @@ function Home() {
         setDiagnosisLoading(false);
       });
   }
+
+  const handleReset = () => {
+    setImage(null);
+    setDiagnosis("");
+    setNepaliDiagnosis("");
+    setIsDiagnosisComplete(false);
+  };
 
   // Quick translation helper using Google Translate unofficial API
   function translateToNepali(text) {
@@ -106,9 +118,8 @@ function Home() {
           <h1>Crop Disease Diagnosis</h1>
           <p>
             Upload a photo of your crop to receive an AI-powered diagnosis and
-            potential solutions. 
+            potential solutions.
           </p>
-
 
           <div className={`upload-box ${image ? "no-border" : ""}`}>
             {image ? (
@@ -133,15 +144,24 @@ function Home() {
             )}
           </div>
 
+          {diagnosisLoading ? (
+            <button className="diagnosis-btn" disabled>
+              Loading...
+            </button>
+          ) : isDiagnosisComplete ? (
+            <button className="reset-btn" onClick={handleReset}>
+              Reset
+            </button>
+          ) : (
+            <button
+              className="diagnosis-btn"
+              disabled={!image}
+              onClick={handleDiagnosis}
+            >
+              Get Diagnosis
+            </button>
+          )}
 
-          <button
-            className="diagnosis-btn btn1"
-
-            disabled={!image || diagnosisLoading}
-            onClick={handleDiagnosis}
-          >
-            {diagnosisLoading ? "Loading..." : "Get Diagnosis"}
-          </button>
           {diagnosis && (
             <button
               className="diagnosis-btn"
@@ -149,7 +169,7 @@ function Home() {
               onClick={handleDiagnosisTranslationToNepali}
             >
               Translate to Nepali
-            </button> 
+            </button>
           )}
           <h3>{diagnosis ? "Diagnosis Result" : "Get Diagnosis"}</h3>
           {diagnosis ? (

@@ -74,8 +74,14 @@ button:disabled {
   background: #81e665; /* Green for Get Diagnosis */
   margin: 20px 0;
   margin-right: 14px;
+  transition: .5s;
 }
 
+.diagnosis-btn:hover{
+  background: rgb(92, 204, 61);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
+}
 .reset-btn {
   padding: 11px 17px;
   border-radius: 20px;
@@ -164,4 +170,23 @@ button:disabled {
   background: #8e24aa;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
+}
+.reset-btn {
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  margin-right: 14px;
+  background-color: #e53935; /* Red color related to cancel/reset */
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reset-btn:hover {
+  background-color: #c62828;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
 }

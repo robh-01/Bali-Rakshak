@@ -11,6 +11,7 @@ import HomePage from "./Components/HomePage/HomePage.jsx";
 import CommunityPage from "./Components/CommunityPage/CommunityPage.jsx";
 import CreatePost from "./Components/CreatePost/CreatePost.jsx";
 import CommunityPagePosts from "./Components/CommunityPagePosts/CommunityPagePosts.jsx";
+import PostDetail from "./Components/PostDetail/PostDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -48,11 +49,11 @@ const router = createBrowserRouter([
           },
           {
             path: "post/:postId",
-            element: <div>post will be visible here</div>,
+            element: <PostDetail />,
           },
           {
             path: "new",
-            element: <CreatePost/>,
+            element: <CreatePost />,
           },
         ],
       },

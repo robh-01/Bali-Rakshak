@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./HomePage.css";
+import { Camera } from 'lucide-react';
+import { Brain } from 'lucide-react';
+import { MessageCircleMore  } from 'lucide-react';
 
 function Home() {
   const navigate = useNavigate();
@@ -106,7 +109,7 @@ function Home() {
 
         <div className="feature-box">
           <div className="feature-card">
-            <div className="icon">📸</div>
+            <div className="icon"><Camera /></div>
             <h2>Upload a Photo</h2>
             <p>
               Capture a clear image of the affected crop using your smartphone
@@ -115,7 +118,7 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="icon">🤖</div>
+            <div className="icon"><Brain /></div>
             <h2>AI Diagnosis</h2>
             <p>
               Our AI analyzes the image and provides an accurate diagnosis with
@@ -124,7 +127,7 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="icon">👨‍🌾</div>
+            <div className="icon"><MessageCircleMore /></div>
             <h2>Connect with Experts</h2>
             <p>
               Join our forum to discuss your diagnosis with fellow farmers and
