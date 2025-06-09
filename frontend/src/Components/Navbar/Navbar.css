@@ -38,12 +38,18 @@
 }
 .link ul li{
     list-style: none;
-    margin-left: 30px;
+    margin-left: 40px;
     font-weight: 500;
+    
 }
 .link ul li a {
     text-decoration: none;
     color: black;
+    transition: .5s;
+}
+.link ul li a:hover {
+    color: #66cc4a;
+    font-weight: 600;
 }
 
 .logout button{

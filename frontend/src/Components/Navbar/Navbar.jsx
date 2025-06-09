@@ -28,7 +28,7 @@ function Navbar() {
             <Link to="/app">Diagnose</Link>
           </li>
           <li>
-            <Link to="/app/ask">Ask AI</Link>
+            <Link to="/app/ask">Rakshak AI</Link>
           </li>
           <li>
             <Link to="/app/community">Community</Link>
