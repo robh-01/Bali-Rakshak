@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 * {
-  font-family: "Inconsolata", monospace;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,16 +10,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 1px 80px;
-  background: #ffffff; 
+  background: #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  height: 80px;
+  height: 70px;
   position: relative;
   z-index: 10;
   transition: background-color 0.3s ease;
 }
 
 .logo {
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -58,11 +56,13 @@
   align-items: center;
   gap: 10px;
   transition: color 0.3s ease;
+  font-family: "Poppins", sans-serif;
 }
 
 .logo span {
-  color: #66cc4a;
+  color: #03a63c;
   font-weight: 700;
+  font-family: "Poppins", sans-serif;
 }
 
 .link ul {
@@ -85,7 +85,7 @@
 
 .link ul li a:hover,
 .link ul li.active a {
-  color: #66cc4a;
+  color: #027333;
   font-weight: 600;
 }
 
@@ -96,15 +96,15 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #66cc4a;
+  background-color: #027333;
 }
 
 .logout button {
-  background: linear-gradient(to right, #8cd17d, #66cc4a);
+  background: linear-gradient(to right, #66cc4a, #027333);
   border: none;
   padding: 11px 27px;
   border-radius: 20px;
-  font-weight: 500;
+  font-weight: 600;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -117,10 +117,14 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -100%;
+  left: -130%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 70%
+  );
   transform: rotate(45deg);
   pointer-events: none;
   transition: left 0.8s ease;

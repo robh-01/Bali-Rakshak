@@ -171,10 +171,12 @@ function Home() {
           {diagnosis && (
             <button
               className="diagnosis-btn"
-              disabled={!diagnosis}
+              disabled={!diagnosis || nepaliTranslationLoading || nepaliDiagnosis}
               onClick={handleDiagnosisTranslationToNepali}
             >
-              Translate to Nepali
+              {nepaliTranslationLoading
+                ? "Translating..."
+                : "Translate to Nepali"}
             </button>
           )}
           <h3>{diagnosis ? "Diagnosis Result" : "Get Diagnosis"}</h3>

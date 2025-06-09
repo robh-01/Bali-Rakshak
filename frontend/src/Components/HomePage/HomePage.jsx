@@ -109,7 +109,7 @@ function Home() {
 
         <div className="feature-box">
           <div className="feature-card">
-            <div className="icon"><Camera /></div>
+            <div className="icon"><Camera size={36} /></div>
             <h2>Upload a Photo</h2>
             <p>
               Capture a clear image of the affected crop using your smartphone
@@ -118,7 +118,7 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="icon"><Brain /></div>
+            <div className="icon"><Brain size={36} /></div>
             <h2>AI Diagnosis</h2>
             <p>
               Our AI analyzes the image and provides an accurate diagnosis with
@@ -127,7 +127,7 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="icon"><MessageCircleMore /></div>
+            <div className="icon"><MessageCircleMore size={36} /></div>
             <h2>Connect with Experts</h2>
             <p>
               Join our forum to discuss your diagnosis with fellow farmers and

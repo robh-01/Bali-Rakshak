@@ -21,7 +21,7 @@
 .top-logo {
   display: flex;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   padding: 0 80px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -31,11 +31,15 @@
 .top-logo a {
   text-decoration: none;
   color: black;
+  font-family: "Poppins", sans-serif;
+  font-family: 1.5rem;
 }
 
 .top-logo span {
-  color: #66cc4a;
+  color: #027333;
   font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
 }
 
 .top-logo img {
@@ -46,7 +50,8 @@
 }
 
 @keyframes floatLogo {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {

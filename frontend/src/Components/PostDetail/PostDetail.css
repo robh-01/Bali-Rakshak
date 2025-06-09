@@ -157,10 +157,10 @@
 }
 
 .comment-form .send-button {
-  background-color: #4fd12b;
+  background-color: #027333;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 8px 24px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 500;
@@ -169,23 +169,10 @@
   overflow: hidden;
 }
 
-.comment-form .send-button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -100%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  animation: shine 1s ease forwards;
-}
-
-.comment-form .send-button:hover::before {
-  left: 100%;
-}
 
 .comment-form .send-button:hover {
+    background-color: #025939;
+
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(79, 209, 43, 0.2);
 }

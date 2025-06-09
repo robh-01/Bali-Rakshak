@@ -1,20 +1,20 @@
 /* General Styles */
+
 .ask-ai-container {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 40px 20px;
+  padding: 30px 200px;
   background: #f4f8f6;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 /* Header Section */
 .ask-ai-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .ask-ai-header-content h2 {
   font-size: 35px;
-  color: #2c3e50;
+  color: #2c3e50; 
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -29,15 +29,15 @@
 
 /* Chat Container */
 .chat-container {
-  max-width: 800px;
+  max-width: 700px;
   width: 100%;
   margin: auto;
   background-color: #fff;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 74vh;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -110,7 +110,7 @@
 }
 
 .user .message-content {
-  background-color: #4fd12b;
+  background-color: #03A63C;
   color: white;
   border-bottom-right-radius: 6px;
   align-self: flex-end;
@@ -153,10 +153,10 @@
 }
 
 .chat-input button {
-  background-color: #4fd12b;
+  background-color: #027333;
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 9px 27px;
   margin-left: 10px;
   border-radius: 25px;
   cursor: pointer;
@@ -164,5 +164,5 @@
 }
 
 .chat-input button:hover {
-  background-color: #3db51e;
+  background-color: #025939;
 }

@@ -65,7 +65,7 @@ function SignUp() {
           alt="Cost-Effective"
         />
         <a href="/">
-          Bali<span>Rakshak.</span>
+          Bali <span>Rakshak.</span>
         </a>
       </div>
 

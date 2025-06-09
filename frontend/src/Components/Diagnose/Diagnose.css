@@ -71,7 +71,7 @@ button:disabled {
   padding: 11px 17px;
   border-radius: 20px;
   border: none;
-  background: #81e665; /* Green for Get Diagnosis */
+  background: #03A63C; /* Green for Get Diagnosis */
   margin: 20px 0;
   margin-right: 14px;
   transition: .5s;

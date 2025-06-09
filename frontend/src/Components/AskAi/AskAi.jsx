@@ -70,71 +70,71 @@ function AskAi() {
   };
 
   return (
-    <div className="ask-ai-container">
-      {/* Header Section */}
-      <div className="ask-ai-header">
-        <div className="ask-ai-header-content">
-          <h2>Rakshak AI</h2>
-          <p>
-            Get instant answers to your farming questions with our AI assistant.
-            Ask anything from crop management to pest control.
-          </p>
-        </div>
-      </div>
-
-      {/* Chat Container */}
-      <div className="chat-container">
-        <div className="chat-header">
-          <div className="bot-profile">
-            <img
-              src="/assets/img/rakshak-ai/rakshak-ai-profile.jpg"
-              alt="Agro Assistant"
-            />
+      <div className="ask-ai-container">
+        {/* Header Section */}
+        <div className="ask-ai-header">
+          <div className="ask-ai-header-content">
+            <h2>Rakshak AI</h2>
+            <p>
+              Get instant answers to your farming questions with our AI
+              assistant. Ask anything from crop management to pest control.
+            </p>
           </div>
-          <h3>Rakshak AI</h3>
         </div>
 
-        <div className="chat-box" ref={chatBoxRef}>
-          {messages.map((msg, i) => (
-            <div key={i} className={`message ${msg.sender}`}>
-              {msg.sender === "ai" && (
-                <div className="bot-avatar">
-                  <img
-                    src="/assets/img/rakshak-ai/rakshak-ai-profile.jpg"
-                    alt="Bot"
-                  />
-                </div>
-              )}
-              <div className="message-content">
-                <ReactMarkdown>{msg.text}</ReactMarkdown>
-              </div>
+        {/* Chat Container */}
+        <div className="chat-container">
+          <div className="chat-header">
+            <div className="bot-profile">
+              <img
+                src="/assets/img/rakshak-ai/rakshak-ai-profile.jpg"
+                alt="Agro Assistant"
+              />
             </div>
-          ))}
-        </div>
-
-        <div className="chat-input">
-          <div className="user-profile">
-            <img
-              src="https://th.bing.com/th/id/OIP.9QoXfqFLKt7SVlVT85ao0wHaE7?r=0&w=2048&h=1365&rs=1&pid=ImgDetMain"
-              alt="User"
-            />
+            <h3>Rakshak AI</h3>
           </div>
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your question here..."
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault(); 
-                sendMessage();
-              }
-            }}
-          />
-          <button onClick={sendMessage}>Send</button>
+
+          <div className="chat-box" ref={chatBoxRef}>
+            {messages.map((msg, i) => (
+              <div key={i} className={`message ${msg.sender}`}>
+                {msg.sender === "ai" && (
+                  <div className="bot-avatar">
+                    <img
+                      src="/assets/img/rakshak-ai/rakshak-ai-profile.jpg"
+                      alt="Bot"
+                    />
+                  </div>
+                )}
+                <div className="message-content">
+                  <ReactMarkdown>{msg.text}</ReactMarkdown>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="chat-input">
+            <div className="user-profile">
+              <img
+                src="https://th.bing.com/th/id/OIP.9QoXfqFLKt7SVlVT85ao0wHaE7?r=0&w=2048&h=1365&rs=1&pid=ImgDetMain"
+                alt="User"
+              />
+            </div>
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Type your question here..."
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  sendMessage();
+                }
+              }}
+            />
+            <button onClick={sendMessage}>Send</button>
+          </div>
         </div>
       </div>
-    </div>
   );
 }
 
